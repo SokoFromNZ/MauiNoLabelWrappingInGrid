@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiNoLabelWrappingInGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid ColumnDefinitions="*" RowDefinitions="Auto,Auto,Auto">
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="Blue"
+            Text="This is a very long text which should be wrapped to the next line when the end of the Android screen is reached" />
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="Green"
+            ColumnDefinitions="*, Auto, *"
+            RowDefinitions="Auto, Auto">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Text="This is a very long text which should be wrapped to the next line when the end of the Android screen is reached" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                Text="No"
+                VerticalOptions="Center" />
+            <Switch Grid.Row="1" Grid.Column="1" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                HorizontalOptions="Start"
+                Text="Yes"
+                VerticalOptions="Center" />
+        </Grid>
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="Yellow"
+            Text="This is a very long text which should be wrapped to the next line when the end of the Android screen is reached" />
+    </Grid>
+
+</ContentPage>
